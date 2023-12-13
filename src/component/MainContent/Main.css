@@ -1,0 +1,9 @@
+
+  .hero-section {
+    background-image: url('https://media.istockphoto.com/id/1357880769/photo/cropped-shot-of-an-unrecognisable-businessman-sitting-alone-and-using-his-cellphone-in-his.jpg?s=612x612&w=0&k=20&c=3Cj-Ym2p2Ig_KU3sKUxH9MWRTvKUcFDI1FVcDIs7G2M=');
+    background-size: cover;
+    background-position: center;
+    height: 700px; /* Set the height according to your design */
+    width: 100%; /* Take the full width of the viewport */
+    margin:0 /* Make space for the navbar */
+  }

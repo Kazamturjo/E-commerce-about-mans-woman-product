@@ -1,0 +1,45 @@
+
+.ID-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax values */
+  gap: 10px; /* Adjust the gap between images */
+  }
+  
+ 
+  
+  .ID-img {
+    /* width: 700px; */
+  height: auto;
+  object-fit: cover;
+  }
+  
+  .detail-nav {
+    display: flex;
+    gap: 20px; /* Adjust the gap between links */
+    
+  }
+  
+  /* Individual nav links */
+  .detail-nav a {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    color: #333;
+  }
+  
+  /* .detail-nav a:hover {
+    background-color: #eee;
+  } */
+  
+  /* Active link styles */
+  .detail-nav a.active {
+    font-weight: bold;
+    /* Additional active link styles */
+  }
+  .back-button{
+    margin-top: 100px;
+    font-size: x-large;
+    color: black;
+  }
+  

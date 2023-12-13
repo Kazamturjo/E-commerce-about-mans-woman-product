@@ -1,0 +1,134 @@
+/* Header.css */
+/* Header.css */
+.navbar {
+ position: fixed;
+ 
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* Transparent */
+  backdrop-filter: blur(5px); /* Adds a blurred effect to the transparent navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  z-index: 1000;
+  /* Additional styles as before */
+}
+
+
+.logo {
+  color: black;
+  margin-right: auto;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 25px;
+  display:right;
+  padding: 5px 20px;
+  text-decoration: none;
+}
+
+.toggle-button {
+  display: none; /* Hide the hamburger icon initially for larger screens */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+}
+
+.nav-links > li {
+  margin-right: 20px;
+  font-size: 2px;
+
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(8, 7, 7);
+  font-size: 14px;
+}
+
+/* Styles for mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+  }
+
+  .toggle-button {
+    display: block; /* Show the hamburger icon for smaller screens */
+    color: gray;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    display: none; /* Hide the nav links by default for smaller screens */
+  }
+
+  .nav-links.open {
+    display: flex; /* Show the nav links when the hamburger icon is clicked */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+    
+  }
+}
+.site-logo {
+  color: black;
+  margin-right: auto;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 25px;
+  display:right;
+  padding: 5px 20px;
+}
+nav ul{
+  margin-right: 50px;
+}
+
+.prag{
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  text-align: left;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  padding: 10px;
+  /* background-color: #f7f7f7; */
+  /* border: 1px solid #ddd; */
+  border-radius: 5px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  transition: transform 0.2s ease-in-out;
+  margin-top: 80px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: slideText 8s linear infinite;
+
+  
+}
+@keyframes slideText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(+100%);
+  }
+}
