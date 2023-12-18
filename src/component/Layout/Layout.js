@@ -4,11 +4,11 @@ import './Layout.css'
 import Navbar from '../Header/Navbar'
 import Footer from '../Footer/Footer'
 
-const Layout = () => {
+const Layout = ({cart}) => {
   return (
     <div>
         <div className='layout-header'>
-        <Navbar/>
+        <Navbar cart={cart}/>
                 <Outlet/>
             
             <Footer/>
