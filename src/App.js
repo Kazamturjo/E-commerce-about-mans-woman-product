@@ -10,8 +10,10 @@ import ProductPricing from "./Pages/Product/ProductList/ProductID/ProductPricing
 import ContactList from "./Pages/Contact/ContactMap/ContactList/ContactList";
 import Cart from "./component/Cart/Cart";
 import { useState } from "react";
+import Order from "./component/PlacedOrder/Order";
 
 function App() {
+  const [cart, setCart] = useState([]);
   const [cartCount, setCartCount] = useState(0);
 
   const updateCartCount = (count) => {
@@ -34,6 +36,7 @@ function App() {
               />
             }
           />
+          <Route path="/order" element= {<Order/>}/>
 
           <Route
             path="product/:id"

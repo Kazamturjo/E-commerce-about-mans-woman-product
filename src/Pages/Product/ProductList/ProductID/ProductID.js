@@ -35,7 +35,7 @@ const ProductID = () => {
     return newCart
    }))
 
-    // current.quantity = 1;
+    
 
     
   };
