@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useParams, NavLink, Outlet } from 'react-router-dom';
-import './ProductID.css';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { Link, useParams, NavLink, Outlet } from "react-router-dom";
+import "./ProductID.css";
+import axios from "axios";
 
-const ProductID = ({setCart,cart}) => {
+const ProductID = () => {
+  const [cart, setCart] = useState([]);
   const activeStyles = {
-    fontWeight: 'bold',
-    textDecoration: 'none',
-    color: '#161616',
+    fontWeight: "bold",
+    textDecoration: "none",
+    color: "#161616",
   };
   const { id } = useParams();
   const [current, setCurrent] = useState(null);
- 
 
   useEffect(() => {
     axios
@@ -20,43 +20,68 @@ const ProductID = ({setCart,cart}) => {
         setCurrent(res.data);
       })
       .catch((err) => {
-        console.error('Error fetching data', err);
+        console.error("Error fetching data", err);
       });
+      const savedCartItems = JSON.parse(localStorage.getItem('cartItems'));
+      setCart(savedCartItems === null ? [] : savedCartItems);
+
   }, [id]);
+  console.log(cart)
 
   const addToCart = (current) => {
+   setCart((prev=>{
+    const newCart =[...prev,current]
+    localStorage.setItem('cartItems', JSON.stringify(newCart)); 
+    return newCart
+   }))
 
+    // current.quantity = 1;
 
-    current.quantity=1
-   
-      setCart(prev => [...prev,current]);
     
   };
 
   return (
     <>
-      <Link to="/product" relative="path" className="back-button">
-        &larr;<span>Back to all products</span>
-      </Link>
+      <div className="btn-add-container">
+        <Link to="/products" relative="path" className="back-button">
+          &larr;<span>Back to all products</span>
+        </Link>
+
+        <Link to="/cart" relative="path" className="Goto-button">
+          <span>Go to cart →</span>
+        </Link>
+      </div>
       {current ? (
         <div className="ID-container">
           <div className="">
-            <img src={current.image} style={{ width: '300px', margin: '20px' }} />
+            <img
+              src={current.image}
+              style={{ width: "300px", margin: "20px" }}
+            />
             <div className="host-van-detail-info-text">
               <i>{current.category}</i>
             </div>
           </div>
           <nav className="detail-nav">
-            <NavLink to="." style={({ isActive }) => (isActive ? activeStyles : null)}>
+            <NavLink
+              to="."
+              style={({ isActive }) => (isActive ? activeStyles : null)}
+            >
               Details
             </NavLink>
-            <NavLink to="pricing" style={({ isActive }) => (isActive ? activeStyles : null)}>
+            <NavLink
+              to="pricing"
+              style={({ isActive }) => (isActive ? activeStyles : null)}
+            >
               Pricing
             </NavLink>
           </nav>
 
-          {/* Add to Cart button */}
-          <button onClick={() =>addToCart(current)}>Add to Cart</button>
+          <div>
+            <button onClick={() => addToCart(current)} className="add-btn">
+              Add to Cart
+            </button>
+          </div>
 
           <Outlet context={{ current }} />
         </div>

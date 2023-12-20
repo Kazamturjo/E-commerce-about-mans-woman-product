@@ -1,45 +1,100 @@
-
 .ID-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax values */
-  gap: 10px; /* Adjust the gap between images */
-  }
-  
- 
-  
-  .ID-img {
-    /* width: 700px; */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+
+
+.ID-img {
+  /* width: 700px; */
   height: auto;
   object-fit: cover;
-  }
-  
-  .detail-nav {
-    display: flex;
-    gap: 20px; /* Adjust the gap between links */
-    
-  }
-  
-  /* Individual nav links */
-  .detail-nav a {
-    text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    color: #333;
-  }
-  
-  /* .detail-nav a:hover {
-    background-color: #eee;
-  } */
-  
-  /* Active link styles */
-  .detail-nav a.active {
-    font-weight: bold;
-    /* Additional active link styles */
-  }
-  .back-button{
-    margin-top: 100px;
-    font-size: x-large;
-    color: black;
-  }
-  
+}
+
+.detail-nav {
+  display: flex;
+  gap: 20px;
+  /* Adjust the gap between links */
+
+}
+
+/* Individual nav links */
+.detail-nav a {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  color: #333;
+}
+
+
+.detail-nav a.active {
+  font-weight: bold;
+}
+
+.btn-add-container {
+  display: flex;
+  justify-content: space-between;
+  /* Adjust as needed */
+  align-items: center;
+
+}
+
+.back-button {
+  margin-top: 100px;
+  display: flex;
+  margin-left: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.back-button span {
+  margin-left: 5px;
+}
+
+.Goto-button {
+  margin-top: 100px;
+  display: flex;
+  margin-right: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.Goto-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.Goto-button span {
+  margin-left: 5px;
+}
+
+.add-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}

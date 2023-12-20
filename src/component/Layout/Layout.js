@@ -1,21 +1,20 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import './Layout.css'
-import Navbar from '../Header/Navbar'
-import Footer from '../Footer/Footer'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import "./Layout.css";
+import Navbar from "../Header/Navbar";
+import Footer from "../Footer/Footer";
 
-const Layout = ({cart}) => {
+const Layout = ({ cart, cartCount }) => {
   return (
     <div>
-        <div className='layout-header'>
-        <Navbar cart={cart}/>
-                <Outlet/>
-            
-            <Footer/>
-            
-        </div>
-    </div>
-  )
-}
+      <div className="layout-header">
+        <Navbar cart={cart} cartCount={cartCount} />
+        <Outlet />
 
-export default Layout
+        <Footer />
+      </div>
+    </div>
+  );
+};
+
+export default Layout;
